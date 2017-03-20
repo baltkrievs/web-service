@@ -16,4 +16,8 @@
         <servlet-name>jersey-serlvet</servlet-name>
         <url-pattern>/*</url-pattern>
     </servlet-mapping>
+    <resource-env-ref>
+        <resource-env-ref-name>bean/storage</resource-env-ref-name>
+        <resource-env-ref-type>by.darashchonak.mentoring.service.Storage</resource-env-ref-type>
+    </resource-env-ref>
 </web-app>

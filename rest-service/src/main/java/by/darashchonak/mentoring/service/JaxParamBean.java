@@ -1,14 +1,14 @@
 package by.darashchonak.mentoring.service;
 
-public class User {
+public class JaxParamBean {
 
-    private Long id;
+    public JaxParamBean() {
+        super();
+    }
+
     private String name;
     private String email;
     private String avatar;
-
-    public User() {
-    }
 
     public String getName() {
         return name;
@@ -18,12 +18,12 @@ public class User {
         this.name = name;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getEmail() {
         return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getAvatar() {
@@ -32,14 +32,6 @@ public class User {
 
     public void setAvatar(String avatar) {
         this.avatar = avatar;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
 }
