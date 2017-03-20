@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import by.darashchonak.mentoring.service.common.User;
+
 public class Storage {
 
     private Map<Long, User> users = new HashMap<>();

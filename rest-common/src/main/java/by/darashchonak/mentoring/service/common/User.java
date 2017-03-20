@@ -1,4 +1,4 @@
-package by.darashchonak.mentoring.service;
+package by.darashchonak.mentoring.service.common;
 
 public class User {
 

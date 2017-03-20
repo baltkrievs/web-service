@@ -49,6 +49,7 @@
     <modules>
         <module>rest-service</module>
         <module>rest-client</module>
+        <module>rest-common</module>
     </modules>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.glassfish.jersey.core/jersey-common -->

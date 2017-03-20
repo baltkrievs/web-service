@@ -21,8 +21,8 @@
             <version>2.8.0</version>
         </dependency>
         <dependency>
-            <groupId>by.darashchonak.mentoring</groupId>
-            <artifactId>rest-service</artifactId>
+            <groupId>by.darashchonak.mentoring.common</groupId>
+            <artifactId>rest-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>

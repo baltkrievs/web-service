@@ -12,8 +12,8 @@ import org.glassfish.jersey.client.ClientConfig;
 
 import com.google.gson.Gson;
 
-import by.darashchonak.mentoring.service.JaxParamBean;
-import by.darashchonak.mentoring.service.User;
+import by.darashchonak.mentoring.service.common.JaxParamBean;
+import by.darashchonak.mentoring.service.common.User;
 
 public class Main {
 
