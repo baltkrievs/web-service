@@ -15,3 +15,8 @@ The service shoud provide a CRUD operations for the whole user data as well as f
 You can store data in any place (database,  memory, etc.)
 
 Optional: Use Swagger for documentation the service.
+
+# Usage
+
+start server **mvn tomcat7:run** <br/>
+start client **mvn package install exec:java -pl rest-client**
