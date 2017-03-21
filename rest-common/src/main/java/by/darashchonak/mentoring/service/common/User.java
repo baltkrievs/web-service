@@ -1,37 +1,11 @@
 package by.darashchonak.mentoring.service.common;
 
-public class User {
+public class User extends JaxParamBean {
 
     private Long id;
-    private String name;
-    private String email;
-    private String avatar;
 
     public User() {
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
+        super();
     }
 
     public Long getId() {
@@ -40,6 +14,12 @@ public class User {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "User [id=" + id + ", getName()=" + getName() + ", getEmail()=" + getEmail() + ", getAvatar()="
+                + getAvatar() + "]";
     }
 
 }

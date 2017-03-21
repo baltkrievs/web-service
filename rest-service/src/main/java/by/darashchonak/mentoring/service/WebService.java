@@ -2,7 +2,6 @@ package by.darashchonak.mentoring.service;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.List;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -16,12 +15,14 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import by.darashchonak.mentoring.service.common.JaxParamBean;
+import by.darashchonak.mentoring.service.common.Storable;
 import by.darashchonak.mentoring.service.common.User;
+import by.darashchonak.mentoring.service.common.Users;
 
 @Path("/rest")
 public class WebService {
 
-    private final Storage storage = Storage.getInstance();
+    private final Storable storage = Storage.getInstance();
 
     /**
      *
@@ -30,9 +31,12 @@ public class WebService {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/user")
-    public List<User> getUsers() {
+    public Users getUsers() {
 
-        return storage.getAll();
+        Users usersList = new Users();
+        usersList.setUsersList(storage.getAll());
+
+        return usersList;
     }
 
     /**
@@ -104,7 +108,7 @@ public class WebService {
 
     /**
      * Updates user data
-     * 
+     *
      * @param bean
      * @param id
      * @param field

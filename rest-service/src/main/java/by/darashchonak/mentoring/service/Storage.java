@@ -5,9 +5,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import by.darashchonak.mentoring.service.common.Storable;
 import by.darashchonak.mentoring.service.common.User;
 
-public class Storage {
+public class Storage implements Storable {
 
     private Map<Long, User> users = new HashMap<>();
     private Long nextId = new Long(1);
@@ -18,6 +19,7 @@ public class Storage {
         ++nextId;
     }
 
+    @Override
     public Long create(User user) {
         Long id = nextId;
         user.setId(id);
@@ -27,6 +29,7 @@ public class Storage {
         return id;
     }
 
+    @Override
     public void update(User user) {
 
         Long id = user.getId();
@@ -34,15 +37,18 @@ public class Storage {
 
     }
 
+    @Override
     public User get(Long id) {
 
         return users.get(id);
     }
 
+    @Override
     public void delete(Long id) {
         users.remove(id);
     }
 
+    @Override
     public List<User> getAll() {
         return users.values().stream().collect(Collectors.toList());
     }
