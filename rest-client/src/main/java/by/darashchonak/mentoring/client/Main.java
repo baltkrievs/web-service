@@ -24,6 +24,8 @@ public class Main {
 
         WebTarget webTarget = client.target("http://localhost:9090/rest").path("user");
 
+        RestClient rc = new RestClient();
+
         User user1 = new User();
         user1.setName("John Travolta");
         user1.setEmail("John@email.org");
@@ -34,6 +36,9 @@ public class Main {
         user2.setEmail("Uma@email.org");
         user2.setAvatar("asad");
 
+        rc.createUser(user1);
+        rc.createUser(user1);
+
         Gson gson = new Gson();
         String json1 = gson.toJson(user1);
         String json2 = gson.toJson(user2);
@@ -41,9 +46,12 @@ public class Main {
         // Create two users
         Invocation.Builder invocationBuilder = webTarget.request(MediaType.APPLICATION_JSON);
         Response response = invocationBuilder.put(Entity.entity(json1, MediaType.APPLICATION_JSON), Response.class);
-        System.out.println(response.getStatus() + " " + response.getLocation().toString());
-        response = invocationBuilder.put(Entity.entity(json2, MediaType.APPLICATION_JSON), Response.class);
-        System.out.println(response.getStatus() + " " + response.getLocation().toString());
+        // System.out.println(response.getStatus() + " " +
+        // response.getLocation().toString());
+        // response = invocationBuilder.put(Entity.entity(json2,
+        // MediaType.APPLICATION_JSON), Response.class);
+        // System.out.println(response.getStatus() + " " +
+        // response.getLocation().toString());
 
         // Get user by Id
         webTarget = client.target("http://localhost:9090/rest").path("user").path("2");
